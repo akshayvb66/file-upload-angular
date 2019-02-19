@@ -9,6 +9,7 @@ import { HttpClient, HttpEvent, HttpRequest } from '@angular/common/http';
 export class UploadService {
   
   _url;
+  allowedMimeType;
 
   constructor(private http: HttpClient) { }
  
@@ -17,12 +18,16 @@ export class UploadService {
  
     formdata.append('file', file);
 
+    this.allowedMimeType = ['application/pdf'];
+
     this._url="http://localhost:8080/post/"
     
-    return this.http.post(this._url,formdata,{responseType: 'blob' as 'json' })
 
+    console.log("inside ")
  
-    // const req = new HttpRequest('POST', 'http://localhost:8080/post/', formdata, {
+    return this.http.post(this._url,formdata,{responseType: 'blob' as 'json' })
+  
+
     //   reportProgress: true,
     //   responseType: 'text'
     // });

@@ -7,6 +7,8 @@ import {FormsModule} from '@angular/forms';
 import { UploadService } from './upload.service';
 import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
+import { FileDropModule } from 'ngx-file-drop';
+
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import {MatButtonModule} from '@angular/material/button';
     AppRoutingModule,
     HttpClientModule,
     FormsModule   ,
-    MatButtonModule
+    MatButtonModule,
+    FileDropModule,
+
   ],
 
   providers: [UploadService],

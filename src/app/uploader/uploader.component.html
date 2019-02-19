@@ -4,11 +4,16 @@
       {{progress.percentage}}%</div>
   </div> -->
   
-  <label class="btn btn-default">
+  <!-- <label class="btn btn-default">
     <input type="file" (change)="selectFile($event)" nv-file-select="" accept=".csv">
-  </label>
+  </label> -->
 
-  <button mat-raised-button color="primary" class="btn btn-success" [disabled]="!selectedFiles"  (click)="upload()">Upload</button>
+  <div>
+  <file-drop headertext="Drop files here"  showBrowseBtn="true" (onFileDrop)="selectFile($event)" 
+  (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
+</file-drop>
+</div>
+  <!-- <button mat-raised-button color="primary" class="btn btn-success" [disabled]="!files"  (click)="upload()">Upload</button> -->
   {{msg}}
 <br>
   <!-- <button class="btn btn-success"  (click)="showFiles(true)">Show your files</button> -->
